@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="rutas.com.netsolin" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="rutas.com.netsolin" version="0.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Netsolin Rutas</name>
     <description>Netsolin Rutas app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <author email="info@netsolin.com" href="http://netsolin.com/">Equipo Netsolin</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -92,6 +92,6 @@
         <variable name="UPDATE_API" value="https://api.ionicjs.com" />
         <variable name="MIN_BACKGROUND_DURATION" value="30" />
     </plugin>
-    <engine name="android" spec="~7.1.1" />
     <plugin name="cordova-plugin-firebase" spec="2.0.5" />
+    <engine name="android" spec="~7.1.1" />
 </widget>

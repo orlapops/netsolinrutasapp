@@ -1,8 +1,8 @@
 {
-  "name": "New Ionic App",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular",
-  "id": "cc631768"
+    "name": "Netsolin Rutas App",
+    "integrations": {
+        "cordova": {}
+    },
+    "type": "angular",
+    "id": "cc631768"
 }
