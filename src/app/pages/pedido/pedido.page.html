@@ -1,0 +1,63 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title class="headercliente">Items a Pedir</ion-title>
+        <ion-title class="headercliente">{{_cliente.clienteActual.cliente}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="animated fadeIn">
+    <div text-center *ngIf="pedido.length === 0" class="carrito_vacio">
+
+        <ion-icon name="ios-cart-outline" class="icon-5x"></ion-icon>
+        <br> No tiene items a Pedir
+    </div>
+    <div *ngIf="pedido.length != 0" class="bg-white">
+        <ion-grid class="bg-white">
+            <ion-row *ngFor="let itemp of pedido; let i = index;">
+                <ion-col>
+                    <img *ngIf="itemp.item.link_imgfb" [src]="_DomSanitizer.bypassSecurityTrustUrl(itemp.item.link_imgfb)" />
+                    <img *ngIf="!itemp.item.link_imgfb" src="assets/img/imagennodisponible.jpg" />
+                </ion-col>
+                <ion-col>
+                    <ion-card class="bg-white">
+                        <ion-text color="primary" slot="start" tappable routerLink="/prod-detail.ped/{{itemp.item.cod_ref}}">
+                            {{itemp.item.cod_ref}} {{itemp.item.nombre}}
+                        </ion-text>
+                        <ion-input slot="start" (ionChange)="total(itemp,i)" [(ngModel)]="itemp.item.cantidad" type="number" min="1" max="1000" step="1" placeholder="Cantidad" clearOnEdit="true">
+                        </ion-input>
+                        <ion-text color="success" slot="end">
+                            Total: {{ itemp.item.total | currency }}
+                        </ion-text>
+                        <ion-button slot="end" shape="round" color="danger" (click)="deleteItem(itemp)">
+                            Eliminar
+                        </ion-button>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <hr>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <h3>
+                        <strong>Total:</strong>
+                    </h3>
+                </ion-col>
+                <ion-col>
+                    <h3>
+                        <strong> {{ total_ped | currency }}</strong>
+                    </h3>
+                </ion-col>
+
+            </ion-row>
+        </ion-grid>
+        <ion-button slot="end" shape="round" color="success" (click)="realizar_pedido()">
+            Realizar Pedido
+        </ion-button>
+
+
+    </div>
+</ion-content>
