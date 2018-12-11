@@ -111,11 +111,11 @@
             "cordova-plugin-network-information": {},
             "cordova-plugin-firebase": {},
             "cordova-plugin-ionic": {
-                "APP_ID": "cc631768",
-                "CHANNEL_NAME": "Master",
+                "APP_ID": "rutas.com.netsolin",
+                "CHANNEL_NAME": "master",
                 "UPDATE_METHOD": "auto",
+                "MAX_STORE": "3",
                 "UPDATE_API": "https://api.ionicjs.com",
-                "MAX_STORE": "2",
                 "MIN_BACKGROUND_DURATION": "30"
             }
         },

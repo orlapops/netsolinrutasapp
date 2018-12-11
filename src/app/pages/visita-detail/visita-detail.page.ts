@@ -242,7 +242,6 @@ export class VisitaDetailPage implements OnInit {
     });    
   }
     buscar_productosped($event){
-
       this.qped = $event.target.value;
       console.log('buscar_productos ped: ', this.qped );
       this.searchingped = true;
@@ -262,6 +261,7 @@ export class VisitaDetailPage implements OnInit {
   //       this.items = this.all_items;
   //     }
   }
+  
   tomafoto(){
       console.log('en tomafoto camara1');
       const optionscam: CameraOptions = {
